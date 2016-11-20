@@ -78,7 +78,7 @@ html.swipebox-html.swipebox-touch {
     width: 100% !important;
 }
 #swipebox-slider .slide-loading {
-    background: rgba(0, 0, 0, 0) url("../img/misc/loader.gif") no-repeat scroll center center;
+    background: rgba(0, 0, 0, 0) url("../img/loader.gif") no-repeat scroll center center;
 }
 #swipebox-bottom-bar, #swipebox-top-bar {
     height: 50px;
