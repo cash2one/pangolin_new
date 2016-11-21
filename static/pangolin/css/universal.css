@@ -890,19 +890,19 @@ a.btn-nav .btn {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
 
 .bg-img {
-  background: url(../img/header/19.jpg); }
+  background: url(../img/laser_2.gif); }
 
 .bg-img2 {
-  background: url(../img/header/17.jpg); }
+  background: url(../img/laser_3.gif); }
 
 .bg-img3 {
-  background: url(../img/header/13.jpg); }
+  background: url(../img/laser_4.gif); }
 
 .bg-img4 {
-  background: url(../img/header/10.jpg); }
+  background: url(../img/laser_5.gif); }
 
 .bg-img5 {
-  background: url(../img/header/18.jpg); }
+  background: url(../img/laser_6.gif); }
 
 .bg-img, .bg-img2, .bg-img3, .bg-img4, .bg-img5 {
   background-attachment: fixed;
