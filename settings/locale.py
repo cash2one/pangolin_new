@@ -12,7 +12,7 @@ LANGUAGES = (
 
 )
 
-LANGUAGE_CODE = 'uk-UA'
+LANGUAGE_CODE = 'en-US'
 
 USE_I18N = True
 
