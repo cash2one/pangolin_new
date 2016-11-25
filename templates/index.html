@@ -1,0 +1,157 @@
+{% load staticfiles %}
+{% load content_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'pangolin/img/favicon.png' %}">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Pangolin
+    </title>
+    <!-- Bootstrap Core CSS-->
+    <link href="{% static 'pangolin/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="{% static 'pangolin/auto-hiding-navigation/css/reset.css' %}"> <!-- CSS reset -->
+  <link rel="stylesheet" href="{% static 'pangolin/auto-hiding-navigation/css/style.css' %}"> <!-- Resource style -->
+    <link href="{% static 'pangolin/css/universal.css' %}" rel="stylesheet">
+    {# <link rel="stylesheet" type="text/css" href="{% static 'pangolin/itemSlider/css/style.css' %}"/> #}
+    {# // <script src="{% static 'pangolin/itemSlider/js/modernizr.custom.63321.js' %}"></script> #}
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="top">	
+    <!-- Preloader-->
+    {# <div id="preloader"> #}
+      {# <div id="status"></div> #}
+    {# </div> #}
+{# <body> #}
+    <header class="cd-auto-hide-header">
+  <div class="logo"><a href="/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
+
+  <nav class="cd-primary-nav">
+    <a href="#cd-navigation" class="nav-trigger">
+      <span>
+        <em aria-hidden="true"></em>
+        {# Menu #}
+      </span>
+    </a> <!-- .nav-trigger -->
+
+    <ul id="cd-navigation">
+      <li><a href="/">Products</a></li>
+      <li><a href="/support/">Support</a></li>
+      <li><a href="/support/">Educations</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav> <!-- .cd-primary-nav -->
+
+
+    
+    
+{% block device %}{% endblock %}
+
+{% block main %}{% endblock %}
+
+{% block hardware %}{% endblock %}
+   
+{% block software %}{% endblock %}
+
+{% block news %}{% endblock %} 
+
+{% block support %}{% endblock %} 
+
+{% block contact %}{% endblock %}   
+    
+    <!-- Footer Section-->
+    <section class="section-small footer bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h5>About</h5>
+            <p>Thanks for choosing Universal for your next pr.</p>
+          </div>
+          <div class="col-sm-2 col-sm-offset-1 footer-menu">
+            <h5>Company</h5>
+            <h6 class="no-pad"><a href="services.html">Our Services</a></h6>
+            <h6 class="no-pad"><a href="clients.html">Our Clients</a></h6>
+            <h6 class="no-pad"><a href="contact.html">Contact Us</a></h6>
+            <h6 class="no-pad"><a href="shop.html">Shop</a></h6>
+          </div>
+          <div class="col-sm-2 footer-menu">
+            <h5>&nbsp;</h5>
+            <h6 class="no-pad"><a href="about.html">About us</a></h6>
+            <h6 class="no-pad"><a href="portfolio-masonry-4.html">Portfolio</a></h6>
+            <h6 class="no-pad"><a href="team.html">Our Team</a></h6>
+            <h6 class="no-pad"><a href="register.html">Register</a></h6>
+          </div>
+          <div class="col-sm-3 text-right">
+            <h5>Total downloads</h5><span data-min="0" data-max="2785" data-delay="5" data-increment="3" class="numscroller">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-small footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h6>Powered By <a href="http://ForBetterWeb.com"> forbetterweb.com</a>
+            </h6>
+          </div>
+          <div class="col-sm-3 col-sm-offset-1">
+            <h6>We <i class="fa fa-heart fa-fw"></i> creative people
+            </h6>
+          </div>
+          <div class="col-sm-3 col-sm-offset-1 text-right">
+            <ul class="list-inline">
+              <li><a href="/"><i class="fa fa-twitter fa-fw fa-lg"></i></a></li>
+              <li><a href="/"><i class="fa fa-facebook fa-fw fa-lg"></i></a></li>
+              <li><a href="/"><i class="fa fa-google-plus fa-fw fa-lg"></i></a></li>
+              <li><a href="/"><i class="fa fa-linkedin fa-fw fa-lg"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- jQuery-->
+    <script src="{% static 'pangolin/js/jquery-1.12.4.min.js' %}"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="{% static 'pangolin/js/bootstrap.min.js' %}"></script>
+    <!-- Plugin JavaScript-->
+    <script src="{% static 'pangolin/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/device.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/form.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/jquery.placeholder.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/jquery.shuffle.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/jquery.parallax.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/jquery.swipebox.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/smoothscroll.min.js' %}"></script>
+    <script src="{% static 'pangolin/js/wow.min.js' %}"></script>
+    <script src="{% static 'pangolin/itemSlider/js/jquery.catslider.js' %}"></script>
+    {# // <script src="{% static 'pangolin/auto-hiding-navigation/js/jquery-3.0.0.min.js' %}"></script> #}
+{# // <script>if( !window.jQuery ) document.write('<script src="{% static 'pangolin/auto-hiding-navigation/js/jquery-3.0.0.min.js' %}"><\/script>');</script> #}
+<script src="{% static 'pangolin/auto-hiding-navigation/js/main.js' %}"></script> <!-- Resource jQuery -->
+  
+        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3E86i8mx1BZDlAaLcknh_mWl4F70i4os"></script>
+        <script src="{% static 'pangolin/js/map.js' %}"></script>
+    <!-- Custom Theme JavaScript-->
+    <script src="{% static 'pangolin/js/universal.js' %}"></script>
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      <script>
+      $(function() {
+
+        $( '#mi-slider' ).catslider();
+
+      });
+    </script>
+  </body>
+</html>
+

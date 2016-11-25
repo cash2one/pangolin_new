@@ -16,7 +16,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [rel('templates'),
-                 # rel('article/templates'),
+                 rel('product/templates'),
                 ],
         'APP_DIRS': True,
         'OPTIONS': {'context_processors': CONTEXT_PROCESSORS},

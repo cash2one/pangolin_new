@@ -33,3 +33,5 @@ CKEDITOR_CONFIGS = {
         'forcePasteAsPlainText': True
     }
 }
+
+CKEDITOR_JQUERY_URL = 'static/pangolin/js/jquery-1.12.4.min.js'

@@ -18,12 +18,14 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'embed_video',
     'ckeditor',
-    # 'ckeditor_uploader',
+    'ckeditor_uploader',
 
     
     # apps
     'pangolin.core',
     'pangolin.users',
+    'product',
+    'content',
 )
 
 

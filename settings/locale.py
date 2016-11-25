@@ -6,10 +6,7 @@ from settings.base import rel
 TIME_ZONE = 'UTC'
 
 LANGUAGES = (
-	('uk', _('Ukrainian')),
     ('en', _('English')),
-    ('ru', _('Russian')),
-
 )
 
 LANGUAGE_CODE = 'en-US'

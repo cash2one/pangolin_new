@@ -147,6 +147,50 @@ h1, h2, h3, h4, h5, h6 {
 h4, h5, h6 {
   font-weight: 700; }
 
+.device  h2 {
+  text-transform: none;
+  margin: 0 0 15px;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600; }  
+
+.device h3 {
+  margin: 0 0 2px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.2;
+  font-size: 20px;
+  color: #8F3985;
+  text-align: center;
+  font-weight: 600; }   
+
+.device h3 a{
+  margin: 0 0 2px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  line-height: 1.2;
+  font-size: 20px;
+  opacity: 0.9;
+  color: #0070c9;
+  text-align: center;
+  font-weight: 300; } 
+
+  .device h3 a:hover {
+  opacity: 1;
+  color: #8F3985;
+  text-decoration: none; }   
+
+.device h1 {
+  margin: 0 0 15px;
+  text-transform: none;
+  letter-spacing: 0.001em;
+  line-height: 1.0;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 200; }   
+
 .no-transform {
   text-transform: none; }
 
@@ -864,8 +908,8 @@ a.btn-nav .btn {
 .small-header {
   position: relative;
   z-index: 1;
-  padding-top: 142px;
-  padding-bottom: 55px; }
+  padding-top: 48px;
+  padding-bottom: 0px; }
 
 .small-header.bg-dark:before, .small-header.bg-transparent:before, .small-header.bg-img:before, .small-header.bg-img2:before, .small-header.bg-img3:before, .small-header.bg-img4:before, .small-header.bg-img5:before {
   background: rgba(7, 9, 21, 0.5);
@@ -1189,7 +1233,9 @@ input[type=checkbox], input[type=radio] {
   padding-bottom: 20px; }
 
 .row:not(:first-child) {
-  padding-top: 40px; }
+  padding-top: 80px; 
+  padding-bottom: 40px;
+}
 
 /* Team */
 #team h2 {
@@ -1872,8 +1918,8 @@ li .shop-cart {
       margin: 50px 0 50px; }
 
   section, .section {
-    padding-top: 80px;
-    padding-bottom: 80px; }
+    padding-top: 120px;
+    padding-bottom: 120px; }
 
   .section-small {
     padding-top: 60px;

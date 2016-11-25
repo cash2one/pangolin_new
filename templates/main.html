@@ -1,57 +1,28 @@
+{% extends "index.html" %}
 {% load staticfiles %}
+{% load embed_video_tags %}
+{# {% load i18n mptt_tags %} #}
+{% load thumbnail %}
+{# {% load content_tags %} #}
 
+{% block main %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{% static 'pangolin/img/favicon.png' %}">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Pangolin
-    </title>
-    <!-- Bootstrap Core CSS-->
-    <link href="{% static 'pangolin/css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Custom CSS-->
-    <link href="{% static 'pangolin/css/universal.css' %}" rel="stylesheet">
-  </head>
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="top">	
-    <!-- Preloader-->
-    <div id="preloader">
-      <div id="status"></div>
-    </div>
+  <nav class="cd-secondary-nav">
+    <ul>
+      {% for category in categories %}
+
+      <li><a href="/products/{{category.id}}/">{{ category.name }}</a></li>
+
+      {% endfor %}
+    </ul>
+  </nav> <!-- .cd-secondary-nav -->
+</header> <!-- .cd-auto-hide-header -->
     <!-- Navigation One Page-->
-    
-    <nav class="navbar navbar-universal navbar-custom navbar-fixed-top navbar-onepage">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-main-collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button><a href="#page-top" class="navbar-brand page-scroll">
-            <!-- Text or Image logo--><img src="{% static 'pangolin/img/pangolin_logo.png' %}" alt="Logo" class="logo"><img src="{% static 'pangolin/img/pangolin_logo_dark.png' %}" alt="Logo" class="logodark"></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling-->
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          <ul class="nav navbar-nav">
-            <!-- Hidden li included to remove active class from about link when scrolled up past about section-->
-            <li class="hidden"><a href="#page-top"></a></li>
-            <li><a href="#about" class="page-scroll">About</a></li>
-            <li><a href="#services" class="page-scroll">Services</a></li>
-            <li><a href="#news" class="page-scroll">News</a></li>
-            <li><a href="#portfolio" class="page-scroll">Works</a></li>
-            <li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
-            <li><a href="#contact" class="page-scroll">Contact</a></li>
-            <!-- <li><a href="index.html"><i data-wow-iteration="999" data-wow-duration="3s" class="fa fa-plus fa-plus wow flash"></i> All demos</a></li> -->
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Intro Slider-->
+
+     <div class="small-header bg-white">
+    </div>
+
+<!-- Intro Slider-->
     <header id="Carousel-intro" data-ride="carousel" class="intro carousel carousel-big slide carousel-fade">
       <!-- Indicators-->
       <ol class="carousel-indicators">
@@ -60,7 +31,10 @@
         <li data-target="#Carousel-intro" data-slide-to="2"></li>
         <li data-target="#Carousel-intro" data-slide-to="3"></li>
       </ol>
+
       <div class="carousel-inner">
+
+
         <div class="item active">
           <div style="background-image:url('/static/pangolin/img/laser_15.jpg');" class="fill">
             <div class="intro-body">
@@ -70,6 +44,7 @@
             </div>
           </div>
         </div>
+
         <div class="item">
           <div style="background-image:url('/static/pangolin/img/laser_16.jpg');" class="fill">
             <div class="intro-body">
@@ -101,9 +76,15 @@
           </div>
         </div>
       </div>
+
       <!-- Controls--><a href="#Carousel-intro" data-slide="prev" class="left carousel-control"><span class="icon-prev"></span></a><a href="#Carousel-intro" data-slide="next" class="right carousel-control"><span class="icon-next"></span></a>
     </header>
     <!-- Slider-->
+    
+   
+
+
+
     <section id="about" class="section-small">
       <div class="container">
         <div class="row">
@@ -585,80 +566,5 @@ That's what we do with our competitors.</p>
         </div>
       </div>
     </section>
-    <!-- Footer Section-->
-    <section class="section-small footer bg-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <h5>About</h5>
-            <p>Thanks for choosing Universal for your next project! Universal is a unique template for building  beautiful business website. We have a dedicated support team ready to answer your questions.</p>
-          </div>
-          <div class="col-sm-2 col-sm-offset-1 footer-menu">
-            <h5>Company</h5>
-            <h6 class="no-pad"><a href="services.html">Our Services</a></h6>
-            <h6 class="no-pad"><a href="clients.html">Our Clients</a></h6>
-            <h6 class="no-pad"><a href="contact.html">Contact Us</a></h6>
-            <h6 class="no-pad"><a href="shop.html">Shop</a></h6>
-          </div>
-          <div class="col-sm-2 footer-menu">
-            <h5>&nbsp;</h5>
-            <h6 class="no-pad"><a href="about.html">About us</a></h6>
-            <h6 class="no-pad"><a href="portfolio-masonry-4.html">Portfolio</a></h6>
-            <h6 class="no-pad"><a href="team.html">Our Team</a></h6>
-            <h6 class="no-pad"><a href="register.html">Register</a></h6>
-          </div>
-          <div class="col-sm-3 text-right">
-            <h5>Total downloads</h5><span data-min="0" data-max="2785" data-delay="5" data-increment="3" class="numscroller">0</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-small footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <h6>Powered By <a href="http://ForBetterWeb.com"> forbetterweb.com</a>
-            </h6>
-          </div>
-          <div class="col-sm-3 col-sm-offset-1">
-            <h6>We <i class="fa fa-heart fa-fw"></i> creative people
-            </h6>
-          </div>
-          <div class="col-sm-3 col-sm-offset-1 text-right">
-            <ul class="list-inline">
-              <li><a href="/"><i class="fa fa-twitter fa-fw fa-lg"></i></a></li>
-              <li><a href="/"><i class="fa fa-facebook fa-fw fa-lg"></i></a></li>
-              <li><a href="/"><i class="fa fa-google-plus fa-fw fa-lg"></i></a></li>
-              <li><a href="/"><i class="fa fa-linkedin fa-fw fa-lg"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- jQuery-->
-    <script src="{% static 'pangolin/js/jquery-1.12.4.min.js' %}"></script>
-    <!-- Bootstrap Core JavaScript-->
-    <script src="{% static 'pangolin/js/bootstrap.min.js' %}"></script>
-    <!-- Plugin JavaScript-->
-    <script src="{% static 'pangolin/js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/jquery.countdown.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/device.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/form.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/jquery.placeholder.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/jquery.shuffle.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/jquery.parallax.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/jquery.circle-progress.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/jquery.swipebox.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/smoothscroll.min.js' %}"></script>
-    <script src="{% static 'pangolin/js/wow.min.js' %}"></script>
-        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3E86i8mx1BZDlAaLcknh_mWl4F70i4os"></script>
-        <script src="{% static 'pangolin/js/map.js' %}"></script>
-    <!-- Custom Theme JavaScript-->
-    <script src="{% static 'pangolin/js/universal.js' %}"></script>
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </body>
-</html>
+   {% endblock %}
+
