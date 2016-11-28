@@ -8,12 +8,13 @@ admin.autodiscover()
 urlpatterns = [
     
     url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^adminpangolin/', include(admin.site.urls)),
     url(r'^$', main),
     url(r'products/', include('product.urls')),
-    url(r'support/$',support),
-    url(r'news/$',news),
-    url(r'contact/$',contact),
+    url(r'support/', include('product.urls')),
+    url(r'news/(?P<menu_id>\d+)/$',news),
+    url(r'contact/(?P<menu_id>\d+)/$',contact),
+    url(r'menu/(?P<menu_id>\d+)/$', menu),
     
 
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),

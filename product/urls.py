@@ -9,8 +9,11 @@ urlpatterns = [
 
     # url(r'^article/get/(?P<category_id>\d+)/(?P<article_id>\d+)/$', article.views.article),
 
-    url(r'^(?P<category_id>\d+)/$', product.views.products),
-    url(r'^product/(?P<category_id>\d+)/(?P<product_id>\d+)/$', product.views.product),
+    url(r'^(?P<category_id>\d+)/(?P<menu_id>\d+)/$', product.views.products),
+    url(r'^supports/(?P<menu_id>\d+)/$', product.views.supports),
+    url(r'^product/(?P<category_id>\d+)/(?P<product_id>\d+)/(?P<menu_id>\d+)/$', product.views.product),
+    url(r'^support/(?P<support_id>\d+)/(?P<menu_id>\d+)/$', product.views.support),
+
 
     # url(r'^videos/page/$', article.views.articles),
 

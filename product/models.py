@@ -175,6 +175,51 @@ class Product(models.Model):
     pic_slug.short_description = 'Product image'
     pic_slug.allow_tags = True     
 
+class Support(models.Model):
+    title = models.CharField(max_length=250, verbose_name="Support Title")
+    # date = models.DateTimeField(verbose_name="Release date")
+    tag = models.ManyToManyField(Tag, related_name="support_tags", related_query_name="support_tags", verbose_name="Tags")
+    # product_works = models.ManyToManyField(Works, related_name="works", related_query_name="works", verbose_name="Works", blank=True, default="")
+    category = TreeForeignKey(Category, related_name="supports", verbose_name="Categories", default="", blank=True)
+    # product_creator = TreeForeignKey(Creator, related_name="creator", max_length=200, verbose_name="Creator", blank=True, default="")
+    video = EmbedVideoField(verbose_name='Video', blank=True, help_text='URL video', null=True)
+    video_published = models.BooleanField( blank=True, default="")
+    slug = models.CharField(max_length=250, blank=True, verbose_name="Url")
+    slogan = models.CharField(max_length=250, verbose_name="Support Slogan")
+    short_text = RichTextUploadingField(blank=True, verbose_name="Short text")
+    full_text = RichTextUploadingField(blank=True, verbose_name="Full text")
+    published = models.BooleanField(verbose_name="Published", blank=True)
+    # published_main = models.BooleanField( blank=True, default="", verbose_name="Published on main page",)
+    ordering = models.IntegerField(verbose_name="Ordering", default=0, blank=True, null=True)
+    
+    
+   
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'support'
+        verbose_name = "Support"
+        verbose_name_plural = "Supports"
+        ordering = ['ordering']
+
+    # def pic(self):
+    #     if self.image:
+    #         return u'<img src="%s" width="70"/>' % self.image.url
+    #     else:
+    #         return '(none)'
+    # pic.short_description = u'Большая картинка'
+    # pic.allow_tags = True  
+
+    def pic_slug(self):
+        if self.slug:
+            return u'<img src="%s" width="70"/>' % self.slug
+        else:
+            return '(none)'
+    pic_slug.short_description = 'Support image'
+    pic_slug.allow_tags = True     
+
     
 
 # class Slide(models.Model):

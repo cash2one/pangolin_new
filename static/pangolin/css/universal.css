@@ -167,7 +167,7 @@ h4, h5, h6 {
   font-weight: 600; }   
 
 .device h3 a{
-  margin: 0 0 2px;
+  margin: 0 0 10px;
   letter-spacing: 0.06em;
   text-transform: none;
   line-height: 1.2;
@@ -187,7 +187,7 @@ h4, h5, h6 {
   text-transform: none;
   letter-spacing: 0.001em;
   line-height: 1.0;
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
   font-weight: 200; }   
 
@@ -204,6 +204,7 @@ a {
   -moz-transition: all .3s ease;
   transition: all .3s ease; }
   a img {
+    vertical-align: middle;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     transition: all .3s ease; }
@@ -943,7 +944,7 @@ a.btn-nav .btn {
   background: url(../img/laser_4.gif); }
 
 .bg-img4 {
-  background: url(../img/laser_5.gif); }
+  background: url(../img/laser_15.jpg); }
 
 .bg-img5 {
   background: url(../img/laser_6.gif); }

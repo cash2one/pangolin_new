@@ -25,6 +25,20 @@ class ProductAdmin(AdminVideoMixin, admin.ModelAdmin):
         ThumbnailerImageField: {'widget': AdminImageWidget},
     }
 
+class SupportAdmin(AdminVideoMixin, admin.ModelAdmin):
+    fields = ["title", "video", 'video_published', "slogan", 'short_text',
+              'full_text', 'slug',
+              "tag", "category", 'published', 'ordering']
+
+   
+    list_filter = ["title", "tag", "category", 'published']
+    search_fields = ["title", "tag", "category"]
+    list_display = ["title", "category", 'published', 'ordering', 'pic_slug']
+    list_editable = ['published', 'ordering']
+    formfield_overrides = {
+        ThumbnailerImageField: {'widget': AdminImageWidget},
+    }
+
 
 class  CategoryAdmin(admin.ModelAdmin):
       # fields = ['name', 'parent']
@@ -58,6 +72,7 @@ class  CreatorAdmin(admin.ModelAdmin):
 
 # admin.site.register(Slide, SlideAdmin)        
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Support, SupportAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Creator, CreatorAdmin)
 admin.site.register(Tag)

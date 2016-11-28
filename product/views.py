@@ -26,28 +26,73 @@ def software(request):
     return render_to_response("software.html")
 
 
-def products(request, category_id=1):
+def products(request, category_id=1, menu_id=2):
+
+    menu_id = int(menu_id)
 
     args = {}
+    categories = Category.objects.filter(published=1).order_by('ordering')
+    args['categories'] = categories
     current_category = Category.objects.get(id=category_id)
     products = Product.objects.filter(product_category__in=current_category.get_descendants(include_self=True))
     args['current_category'] = current_category
     args['products'] = products
+    args['menu'] = menu_id
 
     return render_to_response("products.html", args)
 
 
-def product(request, category_id, product_id):
+
+def product(request, category_id, product_id, menu_id=2):
+
+    menu_id = int(menu_id)
 
     args = {}
+    categories = Category.objects.filter(published=1).order_by('ordering')
+    args['categories'] = categories
     current_product = Product.objects.get(id=product_id)
     current_category = Category.objects.get(id=category_id)
     products = Product.objects.filter(product_category__in=current_category.get_descendants(include_self=True))
     args['current_category'] = current_category
     args['products'] = products
     args['current_product'] = current_product
+    args['menu'] = menu_id
 
     return render_to_response("product.html", args)
+
+
+def supports(request, menu_id):
+    menu_id = int(menu_id)
+    args = {}
+    categories = Category.objects.filter(published=1).order_by('ordering')
+    supports = Support.objects.filter(published=1).order_by('ordering')
+    # current_category = Category.objects.get(id=category_id)
+    # supports = Support.objects.filter(product_category__in=current_category.get_descendants(include_self=True))
+    # args['current_category'] = current_category
+    args['supports'] = supports
+    args['categories'] = categories
+    args['menu'] = menu_id
+    return render_to_response("support.html", args)
+
+
+
+def support(request, support_id, menu_id=2):
+
+    menu_id = int(menu_id)
+
+    args = {}
+    categories = Category.objects.filter(published=1).order_by('ordering')
+    args['categories'] = categories
+    current_support = Support.objects.get(id=support_id)
+    # current_category = Category.objects.get(id=category_id)
+    supports = Support.objects.filter(published=1).order_by('ordering')
+    # args['current_category'] = current_category
+    args['supports'] = supports
+    args['current_support'] = current_support
+    args['menu'] = menu_id
+
+    return render_to_response("support.html", args)
+
 
 
 def return_path_f(request):
