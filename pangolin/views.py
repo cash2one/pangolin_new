@@ -19,7 +19,7 @@ def main(request):
 	categories = Category.objects.filter(published=1).order_by('ordering')
 	args['categories'] = categories
 	args['slides'] = slides
-	args['menu'] = 2
+	args['menu'] = 1
 	return render_to_response("main.html", args)
 
 
