@@ -7,7 +7,7 @@ from easy_thumbnails.fields import ThumbnailerImageField
 
 
 # Register your models here.
-
+MenuItemProduct
 
 
 
@@ -24,6 +24,12 @@ class ProductAdmin(AdminVideoMixin, admin.ModelAdmin):
     formfield_overrides = {
         ThumbnailerImageField: {'widget': AdminImageWidget},
     }
+
+class MenuItemProductAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
+    list_display = ['category', 'name', 'slug', 'published', 'ordering']
+    list_editable = ['slug', 'published', 'ordering']
+
 
 class SupportAdmin(AdminVideoMixin, admin.ModelAdmin):
     fields = ["title", "video", 'video_published', "slogan", 'short_text',
@@ -75,5 +81,6 @@ admin.site.register(Product, ProductAdmin)
 admin.site.register(Support, SupportAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Creator, CreatorAdmin)
+admin.site.register(MenuItemProduct, MenuItemProductAdmin)
 admin.site.register(Tag)
 # admin.site.register(Works, WorksAdmin)

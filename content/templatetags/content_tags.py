@@ -79,6 +79,30 @@ def top_text_big():
 #     return {'items': items}
 
 
+# @register.inclusion_tag('menu/main_menu.html')
+# def main_menu():
+    
+#     menu = Menu.objects.get(pk=1)
+#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
+#     return {'items': items}    
+
+    
+# @register.inclusion_tag('menu/main_menu.html')
+# def main_menu():
+    
+#     menu = Menu.objects.get(pk=1)
+#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
+#     return {'items': items}
+
+
+# @register.inclusion_tag('menu/main_menu.html')
+# def main_menu():
+    
+#     menu = Menu.objects.get(pk=1)
+#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
+#     return {'items': items}       
+
+
 
 
 

@@ -58,20 +58,23 @@
     <ul>
 
       {% if products %}
-      {% if current_product %}
+        {% if current_product %}
       <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
 
-      <li class="product"><a href="#0">Overview</a></li> 
+      {% for menu_item in menu_items %}
 
-      <li class="product"><a href="#0">BEYOND</a></li>
-
-      <li class="product"><a href="#0">QuickShow</a></li>
-
-      {# <li><a href="#0">Accessories</a></li>  #}
-
-      {# <li><a href="#0">Compare</a></li> #}
+      {% if menu_item.name == "Buy" %}
 
       <li class="buy"><a href="#0">Buy</a></li>
+
+      {% else %}
+
+      <li class="product"><a href="#0">{{ menu_item.name }}</a></li> 
+
+      {% endif %}
+
+      {% endfor %}
+
       {% else %}
 
 
@@ -85,7 +88,7 @@
       <li><a href="#0">Accessories</a></li> 
 
       <li><a href="#0">Compare</a></li> 
-      <li class="buy"><a href="#0">Buy</a></li>
+      {# <li class="buy"><a href="#0">Buy</a></li> #}
 
       {% endif %}
 
@@ -167,17 +170,20 @@
       {% if current_product %}
       <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
 
-      <li class="product"><a href="#0">Overview</a></li> 
+      {% for menu_item in menu_items %}
 
-      <li class="product"><a href="#0">BEYOND</a></li>
-
-      <li class="product"><a href="#0">QuickShow</a></li>
-
-      {# <li><a href="#0">Accessories</a></li>  #}
-
-      {# <li><a href="#0">Compare</a></li> #}
+      {% if menu_item.name == "Buy" %}
 
       <li class="buy"><a href="#0">Buy</a></li>
+
+      {% else %}
+
+      <li class="product"><a href="#0">{{ menu_item.name }}</a></li> 
+
+      {% endif %}
+
+      {% endfor %}
+
       {% else %}
 
 
@@ -191,7 +197,7 @@
       <li><a href="#0">Accessories</a></li> 
 
       <li><a href="#0">Compare</a></li> 
-      <li class="buy"><a href="#0">Buy</a></li>
+      {# <li class="buy"><a href="#0">Buy</a></li> #}
 
       {% endif %}
       
@@ -344,20 +350,23 @@
    <nav class="cd-secondary-nav">
     <ul>
 
-      {% if current_product %}
+       {% if current_product %}
       <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
 
-      <li class="product"><a href="#0">Overview</a></li> 
+      {% for menu_item in menu_items %}
 
-      <li class="product"><a href="#0">BEYOND</a></li>
-
-      <li class="product"><a href="#0">QuickShow</a></li>
-
-      {# <li><a href="#0">Accessories</a></li>  #}
-
-      {# <li><a href="#0">Compare</a></li> #}
+      {% if menu_item.name == "Buy" %}
 
       <li class="buy"><a href="#0">Buy</a></li>
+
+      {% else %}
+
+      <li class="product"><a href="#0">{{ menu_item.name }}</a></li> 
+
+      {% endif %}
+
+      {% endfor %}
+
       {% else %}
 
 
@@ -371,7 +380,7 @@
       <li><a href="#0">Accessories</a></li> 
 
       <li><a href="#0">Compare</a></li> 
-      <li class="buy"><a href="#0">Buy</a></li>
+      {# <li class="buy"><a href="#0">Buy</a></li> #}
 
       {% endif %}
       
