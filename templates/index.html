@@ -58,16 +58,36 @@
     <ul>
 
       {% if products %}
-      {% for product in products %}
-      {% if product == current_product %}
-      <li><a class="active" href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
+      {% if current_product %}
+      <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
+
+      <li class="product"><a href="#0">Overview</a></li> 
+
+      <li class="product"><a href="#0">BEYOND</a></li>
+
+      <li class="product"><a href="#0">QuickShow</a></li>
+
+      {# <li><a href="#0">Accessories</a></li>  #}
+
+      {# <li><a href="#0">Compare</a></li> #}
+
+      <li class="buy"><a href="#0">Buy</a></li>
       {% else %}
+
+
+
+      {% for product in products %}
+      
       <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
-      {% endif %}
+
       {% endfor %}
+
       <li><a href="#0">Accessories</a></li> 
+
       <li><a href="#0">Compare</a></li> 
       <li class="buy"><a href="#0">Buy</a></li>
+
+      {% endif %}
 
       {% elif supports %}
       {% for support in supports %}
@@ -101,6 +121,108 @@
 
 
 {% if menu == 3 %}
+
+<header class="cd-auto-hide-header">
+
+<div class="logo"><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
+
+  <nav class="cd-primary-nav">
+    <a href="#cd-navigation" class="nav-trigger">
+      <span>
+        <em aria-hidden="true"></em>
+        {# Menu #}
+      </span>
+    </a> <!-- .nav-trigger -->
+
+    
+
+    <ul id="cd-navigation">
+      {# <li><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small_sq.png' %}" alt="Logo"></a></li> #}
+
+      {# {% if categories %}  #}
+       {% for category in categories %}
+
+      <li><a href="/products/{{category.id}}/{{ menu }}/">{{ category.name }}</a></li>
+
+      {% endfor %}
+      {# {% endif %}  #}
+      {# <li><a href="/">Products</a></li> #}
+      {# <li><a href="/support/">Support</a></li> #}
+      {# <li><a href="/support/">Educations</a></li> #}
+      {# <li><a href="/news/">News</a></li> #}
+      {# <li><a href="/contact/">Contact</a></li> #}
+      <li><a href="/support/supports/{{ menu }}/">Support</a></li>
+  
+      <li><a href="/menu/{{1}}/">menu1</a></li>
+      <li><a href="/menu/{{2}}/">menu2</a></li>
+      <li><a href="/menu/{{3}}/">menu3</a></li>
+    </ul>
+  </nav> <!-- .cd-primary-nav -->
+
+  
+{% if products %}
+   <nav class="cd-secondary-nav">
+    <ul>
+
+      {% if current_product %}
+      <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
+
+      <li class="product"><a href="#0">Overview</a></li> 
+
+      <li class="product"><a href="#0">BEYOND</a></li>
+
+      <li class="product"><a href="#0">QuickShow</a></li>
+
+      {# <li><a href="#0">Accessories</a></li>  #}
+
+      {# <li><a href="#0">Compare</a></li> #}
+
+      <li class="buy"><a href="#0">Buy</a></li>
+      {% else %}
+
+
+
+      {% for product in products %}
+      
+      <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
+
+      {% endfor %}
+
+      <li><a href="#0">Accessories</a></li> 
+
+      <li><a href="#0">Compare</a></li> 
+      <li class="buy"><a href="#0">Buy</a></li>
+
+      {% endif %}
+      
+      
+       
+    </ul>
+  </nav> <!-- .cd-secondary-nav -->
+
+{% elif supports %}
+   <nav class="cd-secondary-nav">
+    <ul>
+
+      {% for support in supports %}
+
+      <li><a href="/support/support/{{support.id}}/{{ menu }}/">{{ support.title }}</a></li>
+
+      {% endfor %}
+       
+    </ul>
+  </nav> <!-- .cd-secondary-nav -->
+{% endif %}
+
+
+
+   
+  </header> <!-- .cd-auto-hide-header -->
+{% endif %}
+
+
+
+{% if menu == 4 %}
 
 <header class="cd-auto-hide-header">
 
@@ -222,17 +344,38 @@
    <nav class="cd-secondary-nav">
     <ul>
 
-      {% for product in products %}
-      {% if product == current_product %}
-      <li><a class="active" href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
+      {% if current_product %}
+      <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
+
+      <li class="product"><a href="#0">Overview</a></li> 
+
+      <li class="product"><a href="#0">BEYOND</a></li>
+
+      <li class="product"><a href="#0">QuickShow</a></li>
+
+      {# <li><a href="#0">Accessories</a></li>  #}
+
+      {# <li><a href="#0">Compare</a></li> #}
+
+      <li class="buy"><a href="#0">Buy</a></li>
       {% else %}
+
+
+
+      {% for product in products %}
+      
       <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
-      {% endif %}
+
       {% endfor %}
+
       <li><a href="#0">Accessories</a></li> 
 
       <li><a href="#0">Compare</a></li> 
       <li class="buy"><a href="#0">Buy</a></li>
+
+      {% endif %}
+      
+      
        
     </ul>
   </nav> <!-- .cd-secondary-nav -->
@@ -250,15 +393,12 @@
     </ul>
   </nav> <!-- .cd-secondary-nav -->
 {% endif %}
-   
+
+
 
    
-
-
-</header> <!-- .cd-auto-hide-header -->
-
+  </header> <!-- .cd-auto-hide-header -->
 {% endif %}
-
  
       {# <a href="#0" class="cd-subnav-trigger"><span>{{ current_category.name }}</span></a> #}
 

@@ -431,6 +431,26 @@ a {
   padding: 0 1em;
 }
 
+.cd-secondary-nav .product a {
+  display: block;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 300;
+  opacity: .6;
+  line-height: 50px;
+  padding: 0 1em;
+}
+
+.cd-secondary-nav .product a:hover {
+  display: block;
+  color: #8F3985;
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 1;
+  line-height: 50px;
+  padding: 0 1em;
+}
+
 .cd-secondary-nav .buy a {
   display: block;
   color: #acedfd;
