@@ -298,6 +298,22 @@ section, .section {
   line-height: inherit;
   border-radius: 2px !important; }
 
+
+/* Snowflakes */
+#canvas {
+border: 1px solid black;
+position: absolute;
+z-index: 10000;
+}
+
+
+#flake {
+color: #fff;
+position: absolute;
+font-size: 25px;
+top: -50px;
+}  
+
 /* Buttons */
 .btn {
   font-size: 12px !important;
