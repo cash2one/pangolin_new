@@ -435,8 +435,8 @@ a {
   display: block;
   color: #ffffff;
   font-size: 12px;
-  font-weight: 300;
-  opacity: .8;
+  font-weight: 400;
+  opacity: .9;
   line-height: 50px;
   padding: 0 1em;
 }
@@ -445,7 +445,7 @@ a {
   display: block;
   color: #8F3985;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   opacity: 1;
   line-height: 50px;
   padding: 0 1em;
