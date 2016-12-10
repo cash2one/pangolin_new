@@ -9,9 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
     <link rel="shortcut icon" href="{% static 'pangolin/img/favicon.png' %}">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -20,21 +18,17 @@
     <!-- Bootstrap Core CSS-->
     <link href="{% static 'pangolin/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{% static 'pangolin/css/styleNotes.css' %}">
     <link rel="stylesheet" href="{% static 'pangolin/auto-hiding-navigation/css/reset.css' %}"> <!-- CSS reset -->
   <link rel="stylesheet" href="{% static 'pangolin/auto-hiding-navigation/css/style.css' %}"> <!-- Resource style -->
     <link href="{% static 'pangolin/css/universal.css' %}" rel="stylesheet">
     
   </head>
   <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="top">	
-
-
-{% if menu == 1 %}
   
     <header class="cd-auto-hide-header">
 
  
-  <div class="logo"><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
+  <div class="logo"><a href="/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
 
  
 
@@ -47,15 +41,41 @@
     </a> <!-- .nav-trigger -->
 
     <ul id="cd-navigation">
-       <li><a href="/menu/{{ menu }}/">Products</a></li>
-      <li><a href="/support/supports/{{ menu }}/">Support</a></li>
-      {# <li><a href="/support/">Educations</a></li> #}
-      {# <li><a href="/news/">News</a></li> #}
-      <li><a href="/contact/{{ menu }}/">Contact</a></li>
-  
-      <li><a href="/menu/{{1}}/">menu1</a></li>
-      <li><a href="/menu/{{2}}/">menu2</a></li>
-      <li><a href="/menu/{{3}}/">menu3</a></li>
+      <li><a href="/">Products</a></li>
+      <li><a href="/support/supports/">Support</a></li>
+      <li><a href="/news/">About Us</a></li>
+      <li><a href="/news/">News</a></li>
+      <li><a href="/contact/">Contact</a></li>
+
+       <li><a href="#" class="dropdown-toggle"><i class="fa fa-shopping-bag fa-lg"></i><span class="badge">3</span><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="shop-nav">
+                  <div class="shop-cart"><a href="shop-cart.html"><img src="{% static 'pangolin/img/Beyond.png' %}" alt=" ">
+                      <div class="btn-dark-border btn btn-xs">$128.99</div><i class="fa fa-times float-right"></i><br>Jacket with contrasting hood</a></div>
+                </li>
+                <li class="shop-nav">
+                  <div class="shop-cart"><a href="shop-cart.html"><img src="{% static 'pangolin/img/fb4.png' %}" alt=" ">
+                      <div class="btn-dark-border btn btn-xs">$186.99</div><i class="fa fa-times float-right"></i><br>Jacket with a seam on the lapel</a></div>
+                </li>
+                <li class="shop-nav">
+                  <div class="shop-cart"><a href="shop-cart.html"><img src="{% static 'pangolin/img/laser.png' %}" alt=" ">
+                      <div class="btn-dark-border btn btn-xs">$98.99</div><i class="fa fa-times float-right"></i><br>Faux leather jacket</a></div><span class="text-left">Subtotal:</span><span class="float-right"><b>$386.99</b></span>
+                </li>
+                <li><a href="shop-cart.html"><span class="btn btn-dark-border btn-sm">Checkout</span></a></li>
+              </ul>
+            </li>
+             <li><a href="#" class="dropdown-toggle"><i class="fa fa-search fa-lg"></i><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <form method="post" class="search-form">
+                    <button type="submit" title="Search" class="search-button"><i class="fa fa-search fa-lg"></i></button>
+                    <input type="text" placeholder="SEARCH" class="form-control search-field">
+                  </form>
+                </li>
+              </ul>
+            </li>
+           
+           
     </ul>
   </nav> <!-- .cd-primary-nav -->
 
@@ -64,7 +84,7 @@
 
       {% if products %}
         {% if current_product %}
-      <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
+     {# <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/">{{ current_product.product_title }}</a></li> #}
 
       {% for menu_item in menu_items %}
 
@@ -80,13 +100,15 @@
 
       {% endfor %}
 
+      <li><a href="/products/{{current_category.id}}/">all {{ current_category.name }}s</a></li>
+
       {% else %}
 
 
 
       {% for product in products %}
       
-      <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
+      <li><a href="/products/product/{{current_category.id}}/{{product.id}}/">{{ product.product_title }}</a></li>
 
       {% endfor %}
 
@@ -100,330 +122,27 @@
       {% elif supports %}
       {% for support in supports %}
 
-      <li><a href="/support/support/{{support.id}}/{{ menu }}/">{{ support.title }}</a></li>
+      <li><a href="/support/support/{{support.id}}/">{{ support.title }}</a></li>
 
       {% endfor %}
 
       {% elif categories %}
       {% for category in categories %}
 
-      <li><a href="/products/{{category.id}}/{{ menu }}/">{{ category.name }}</a></li>
+      <li><a href="/products/{{category.id}}/">{{ category.name }}</a></li>
 
       {% endfor %}
 
       
        {% endif %}
 
-
-      
-      
-
-      {# {% endif %} #}
     </ul>
   </nav> <!-- .cd-secondary-nav -->
 
   </header> <!-- .cd-auto-hide-header -->
-{% endif %}
 
+ <div class="small-header bg-gray2"></div>
 
-
-
-{% if menu == 3 %}
-
-<header class="cd-auto-hide-header">
-
-<div class="logo"><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
-
-  <nav class="cd-primary-nav">
-    <a href="#cd-navigation" class="nav-trigger">
-      <span>
-        <em aria-hidden="true"></em>
-        {# Menu #}
-      </span>
-    </a> <!-- .nav-trigger -->
-
-    
-
-    <ul id="cd-navigation">
-      {# <li><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small_sq.png' %}" alt="Logo"></a></li> #}
-
-      {# {% if categories %}  #}
-       {% for category in categories %}
-
-      <li><a href="/products/{{category.id}}/{{ menu }}/">{{ category.name }}</a></li>
-
-      {% endfor %}
-      {# {% endif %}  #}
-      {# <li><a href="/">Products</a></li> #}
-      {# <li><a href="/support/">Support</a></li> #}
-      {# <li><a href="/support/">Educations</a></li> #}
-      {# <li><a href="/news/">News</a></li> #}
-      {# <li><a href="/contact/">Contact</a></li> #}
-      <li><a href="/support/supports/{{ menu }}/">Support</a></li>
-  
-      <li><a href="/menu/{{1}}/">menu1</a></li>
-      <li><a href="/menu/{{2}}/">menu2</a></li>
-      <li><a href="/menu/{{3}}/">menu3</a></li>
-    </ul>
-  </nav> <!-- .cd-primary-nav -->
-
-  
-{% if products %}
-   <nav class="cd-secondary-nav">
-    <ul>
-
-      {% if current_product %}
-      <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
-
-      {% for menu_item in menu_items %}
-
-      {% if menu_item.name == "Buy" %}
-
-      <li class="buy"><a href="#0">Buy</a></li>
-
-      {% else %}
-
-      <li class="product"><a href="#0">{{ menu_item.name }}</a></li> 
-
-      {% endif %}
-
-      {% endfor %}
-
-      {% else %}
-
-
-
-      {% for product in products %}
-      
-      <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
-
-      {% endfor %}
-
-      <li><a href="#0">Accessories</a></li> 
-
-      <li><a href="#0">Compare</a></li> 
-      {# <li class="buy"><a href="#0">Buy</a></li> #}
-
-      {% endif %}
-      
-      
-       
-    </ul>
-  </nav> <!-- .cd-secondary-nav -->
-
-{% elif supports %}
-   <nav class="cd-secondary-nav">
-    <ul>
-
-      {% for support in supports %}
-
-      <li><a href="/support/support/{{support.id}}/{{ menu }}/">{{ support.title }}</a></li>
-
-      {% endfor %}
-       
-    </ul>
-  </nav> <!-- .cd-secondary-nav -->
-{% endif %}
-
-
-
-   
-  </header> <!-- .cd-auto-hide-header -->
-{% endif %}
-
-
-
-{% if menu == 4 %}
-
-<header class="cd-auto-hide-header">
-
-<div class="logo"><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
-
-  <nav class="cd-primary-nav">
-    <a href="#cd-navigation" class="nav-trigger">
-      <span>
-        <em aria-hidden="true"></em>
-        {# Menu #}
-      </span>
-    </a> <!-- .nav-trigger -->
-
-    
-
-    <ul id="cd-navigation">
-      {# <li><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small_sq.png' %}" alt="Logo"></a></li> #}
-
-      {# {% if categories %}  #}
-       {% for category in categories %}
-
-      <li><a href="/products/{{category.id}}/{{ menu }}/">{{ category.name }}</a></li>
-
-      {% endfor %}
-      {# {% endif %}  #}
-      {# <li><a href="/">Products</a></li> #}
-      {# <li><a href="/support/">Support</a></li> #}
-      {# <li><a href="/support/">Educations</a></li> #}
-      {# <li><a href="/news/">News</a></li> #}
-      {# <li><a href="/contact/">Contact</a></li> #}
-      <li><a href="/support/supports/{{ menu }}/">Support</a></li>
-  
-      <li><a href="/menu/{{1}}/">menu1</a></li>
-      <li><a href="/menu/{{2}}/">menu2</a></li>
-      <li><a href="/menu/{{3}}/">menu3</a></li>
-    </ul>
-  </nav> <!-- .cd-primary-nav -->
-
-  
-{% if products %}
-   <nav class="cd-secondary-nav">
-    <ul>
-
-      {% for product in products %}
-      {% if product == current_product %}
-      <li><a class="active" href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
-      {% else %}
-      <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
-      {% endif %}
-      {% endfor %}
-      <li><a href="#0">Accessories</a></li> 
-
-      <li><a href="#0">Compare</a></li> 
-      <li class="buy"><a href="#0">Buy</a></li>
-       
-    </ul>
-  </nav> <!-- .cd-secondary-nav -->
-
-{% elif supports %}
-   <nav class="cd-secondary-nav">
-    <ul>
-
-      {% for support in supports %}
-
-      <li><a href="/support/support/{{support.id}}/{{ menu }}/">{{ support.title }}</a></li>
-
-      {% endfor %}
-       
-    </ul>
-  </nav> <!-- .cd-secondary-nav -->
-{% endif %}
-
-
-
-   
-  </header> <!-- .cd-auto-hide-header -->
-{% endif %}
-
-
-{% if menu == 2 %}
-
-<header class="cd-auto-hide-header">
-
-<div class="logo"><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small.png' %}" alt="Logo"></a></div>
-
-  <nav class="cd-primary1-nav">
-    <a href="#cd-navigation" class="nav-trigger">
-      <span>
-        <em aria-hidden="true"></em>
-        {# Menu #}
-      </span>
-    </a> <!-- .nav-trigger -->
-
-    <ul id="cd-navigation">
-      {# <li><a href="/menu/{{ menu }}/"><img src="{% static 'pangolin/img/pangolin_logo_small_sq.png' %}" alt="Logo"></a></li> #}
-
-      {# {% if categories %}  #}
-       {% for category in categories %}
-
-      <li><a href="/products/{{category.id}}/{{ menu }}/">{{ category.name }}</a></li>
-
-      {% endfor %}
-      {# {% endif %}  #}
-      {# <li><a href="/">Products</a></li> #}
-      {# <li><a href="/support/">Support</a></li> #}
-      {# <li><a href="/support/">Educations</a></li> #}
-      {# <li><a href="/news/">News</a></li> #}
-      {# <li><a href="/contact/">Contact</a></li> #}
-      <li><a href="/support/supports/{{ menu }}/">Support</a></li>
-  
-      <li><a href="/menu/{{1}}/">menu1</a></li>
-      <li><a href="/menu/{{2}}/">menu2</a></li>
-      <li><a href="/menu/{{3}}/">menu3</a></li>
-    </ul>
-  </nav> <!-- .cd-primary-nav -->
-
-  
-{% if products %}
-   <nav class="cd-secondary-nav">
-    <ul>
-
-       {% if current_product %}
-      <li><a class="active" href="/products/product/{{current_category.id}}/{{current_product.id}}/{{ menu }}/">{{ current_product.product_title }}</a></li>
-
-      {% for menu_item in menu_items %}
-
-      {% if menu_item.name == "Buy" %}
-
-      <li class="buy"><a href="#0">Buy</a></li>
-
-      {% else %}
-
-      <li class="product"><a href="#0">{{ menu_item.name }}</a></li> 
-
-      {% endif %}
-
-      {% endfor %}
-
-      {% else %}
-
-
-
-      {% for product in products %}
-      
-      <li><a href="/products/product/{{current_category.id}}/{{product.id}}/{{ menu }}/">{{ product.product_title }}</a></li>
-
-      {% endfor %}
-
-      <li><a href="#0">Accessories</a></li> 
-
-      <li><a href="#0">Compare</a></li> 
-      {# <li class="buy"><a href="#0">Buy</a></li> #}
-
-      {% endif %}
-      
-      
-       
-    </ul>
-  </nav> <!-- .cd-secondary-nav -->
-
-{% elif supports %}
-   <nav class="cd-secondary-nav">
-    <ul>
-
-      {% for support in supports %}
-
-      <li><a href="/support/support/{{support.id}}/{{ menu }}/">{{ support.title }}</a></li>
-
-      {% endfor %}
-       
-    </ul>
-  </nav> <!-- .cd-secondary-nav -->
-{% endif %}
-
-
-
-   
-  </header> <!-- .cd-auto-hide-header -->
-{% endif %}
- 
-      {# <a href="#0" class="cd-subnav-trigger"><span>{{ current_category.name }}</span></a> #}
-
-          {# <ul> #}
-            {# <li class="go-back"><a href="#0">Menu</a></li> #}
-            {# {% for product in products %} #}
-      {# <li><a href="/products/product/{{product.id}}/">{{ product.product_title }}</a></li> #}
-      {# {% endfor %} #}
-            {# <li><a href="#0" class="placeholder">Placeholder</a></li> #}
-          {# </ul> #}
-    
 
 
     
@@ -448,7 +167,7 @@
         <div class="row">
           <div class="col-sm-4">
             <h5>About</h5>
-            <p>Thanks for choosing Universal for your next pr.</p>
+            <p>Thanks your</p>
           </div>
           <div class="col-sm-2 col-sm-offset-1 footer-menu">
             <h5>Company</h5>
@@ -508,7 +227,6 @@
     <script src="{% static 'pangolin/js/jquery.swipebox.min.js' %}"></script>
     <script src="{% static 'pangolin/js/smoothscroll.min.js' %}"></script>
     <script src="{% static 'pangolin/js/wow.min.js' %}"></script>
-    <script type="text/babel" src="{% static 'pangolin/js/notes.js' %}"></script>
     
 <script src="{% static 'pangolin/auto-hiding-navigation/js/main.js' %}"></script> <!-- Resource jQuery -->
   
@@ -524,5 +242,7 @@
     
   </body>
 </html>
+
+
 
    

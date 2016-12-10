@@ -41,7 +41,7 @@ class Category(MPTTModel):
         verbose_name_plural = "Categories"
         ordering = ('tree_id','level')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class MPTTMeta:
@@ -183,7 +183,7 @@ class MenuItemProduct(models.Model):
     published = models.BooleanField(verbose_name="Published")
     ordering = models.IntegerField(verbose_name="Ordering", default=0, blank=True, null=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     class Meta:

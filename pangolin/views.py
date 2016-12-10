@@ -19,41 +19,25 @@ def main(request):
 	categories = Category.objects.filter(published=1).order_by('ordering')
 	args['categories'] = categories
 	args['slides'] = slides
-	args['menu'] = 1
+
 	return render_to_response("main.html", args)
 
 
     
-def news(request, menu_id):
+def news(request):
 
-	menu_id = int(menu_id)
 	args = {}
 	categories = Category.objects.filter(published=1).order_by('ordering')
 	args['categories'] = categories
-	args['menu'] = menu_id
 
 	return render_to_response("news.html", args)
 
 
 
-def contact(request, menu_id):
-
-	menu_id = int(menu_id)
+def contact(request):
 
 	args = {}
 	categories = Category.objects.filter(published=1).order_by('ordering')
 	args['categories'] = categories
-	args['menu'] = menu_id
+
 	return render_to_response("contact.html", args)
-
-
-def menu(request, menu_id):
-
-	menu_id = int(menu_id)
-	args = {}
-	slides = Slide.objects.filter(published=1).order_by('ordering')
-	categories = Category.objects.filter(published=1).order_by('ordering')
-	args['categories'] = categories
-	args['slides'] = slides
-	args['menu'] = menu_id
-	return render_to_response("main.html", args)
