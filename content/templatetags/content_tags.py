@@ -7,6 +7,7 @@ from django import template
 # from django.utils.safestring import mark_safe
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from content.models import *
+from product.models import Category, Support
 
 
 register = template.Library()
@@ -63,6 +64,19 @@ def top_text_big():
     top = get_object_or_404(Top, published=1)
     return {'text_big': top.text_big}
 
+@register.inclusion_tag('footer/category_footer.html')
+def category_footer():
+    
+    categories = Category.objects.filter(published=1).order_by('ordering')
+    return {'categories': categories} 
+
+
+@register.inclusion_tag('footer/support_footer.html')
+def support_footer():
+    
+    supports = Support.objects.filter(published=1).order_by('ordering')
+    return {'supports': supports}     
+
 
 # @register.inclusion_tag('slides/slides.html')
 # def slides():
@@ -79,28 +93,7 @@ def top_text_big():
 #     return {'items': items}
 
 
-# @register.inclusion_tag('menu/main_menu.html')
-# def main_menu():
-    
-#     menu = Menu.objects.get(pk=1)
-#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
-#     return {'items': items}    
 
-    
-# @register.inclusion_tag('menu/main_menu.html')
-# def main_menu():
-    
-#     menu = Menu.objects.get(pk=1)
-#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
-#     return {'items': items}
-
-
-# @register.inclusion_tag('menu/main_menu.html')
-# def main_menu():
-    
-#     menu = Menu.objects.get(pk=1)
-#     items = MenuItem.objects.filter(menu=menu, published=1).order_by('ordering')
-#     return {'items': items}       
 
 
 

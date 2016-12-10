@@ -142,7 +142,7 @@ body {
     -moz-transform: scale(1);
     opacity: 0.5; } }
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 35px;
+  margin: 0 0 10px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   line-height: 1.7;
@@ -153,7 +153,7 @@ h4, h5, h6 {
 
 .device  h2 {
   text-transform: none;
-  margin: 60px 0 15px;
+  margin: 30px 0 15px;
   letter-spacing: 0.01em;
   line-height: 1.2;
   font-size: 30px;
@@ -173,7 +173,8 @@ h4, h5, h6 {
 
 .device h3 a{
   margin: 0 0 10px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
+  font-stretch: extra-condensed;
   text-transform: none;
   line-height: 1.2;
   font-size: 20px;
@@ -287,10 +288,12 @@ section, .section {
 
 .section-small {
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px; }
+  padding-top: 10px;
+  padding-bottom: 0px; }
 
 .list-inline > li {
+  padding-right: 2px;
+  padding-left: 2px;
   padding-bottom: 10px;
   vertical-align: bottom; }
 
@@ -937,7 +940,7 @@ a.btn-nav .btn {
 .small-header {
   position: relative;
   z-index: 1;
-  padding-top: 48px;
+  padding-top: 44px;
   padding-bottom: 0px; }
 
 .small-header.bg-dark:before, .small-header.bg-transparent:before, .small-header.bg-img:before, .small-header.bg-img2:before, .small-header.bg-img3:before, .small-header.bg-img4:before, .small-header.bg-img5:before {
@@ -1261,8 +1264,13 @@ input[type=checkbox], input[type=radio] {
 #news-single .carousel {
   padding-bottom: 20px; }
 
+.row_products {
+  padding-top: 40px; 
+  padding-bottom: 40px;
+}  
+
 .row:not(:first-child) {
-  padding-top: 80px; 
+  padding-top: 40px; 
   padding-bottom: 40px;
 }
 
@@ -1948,11 +1956,11 @@ li .shop-cart {
 
   section, .section {
     padding-top: 0px;
-    padding-bottom: 40px; }
+    padding-bottom: 0px; }
 
   .section-small {
-    padding-top: 60px;
-    padding-bottom: 60px; }
+    padding-top: 10px;
+    padding-bottom: 10px; }
 
   .portfolio-sorting li a {
     margin: 0;
@@ -1973,7 +1981,7 @@ li .shop-cart {
   .footer .text-right {
     text-align: left; }
   .footer .footer-menu {
-    padding-bottom: 20px; }
+    padding-bottom: 5px; }
 
   section {
     background-attachment: scroll !important;
@@ -2014,15 +2022,29 @@ li .shop-cart {
   .footer .footer-menu a {
     line-height: 24px; }
   .footer .counter {
-    line-height: 44px; }
+    line-height: 24px; }
   .footer h4, .footer h5, .footer h6 {
-    font-weight: 800;
-    opacity: 0.7; }
+    font-weight: 600;
+    opacity: 0.8; }
   .footer a {
     text-decoration: none;
     opacity: 1; }
     .footer a:hover {
       text-decoration: none; }
+
+  .footer h8 {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.8; }
+  .footer h8 a {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    opacity: 1; }
+    .footer h8 a:hover {
+      text-decoration: none; }    
 
 .footer-small {
   padding-top: 50px;
