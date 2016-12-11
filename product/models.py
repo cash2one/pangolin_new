@@ -65,7 +65,7 @@ class Creator(MPTTModel):
         verbose_name_plural = "Creators"
         ordering = ('tree_id', 'level')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def pic_slug(self):

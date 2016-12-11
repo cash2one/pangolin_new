@@ -9,6 +9,7 @@ from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.template import Context
 from product.models import Category
+from product.models import Product
 from content.models import Slide
 
 
@@ -17,8 +18,11 @@ def main(request):
 	args = {}
 	slides = Slide.objects.filter(published=1).order_by('ordering')
 	categories = Category.objects.filter(published=1).order_by('ordering')
+	products_main = Product.objects.filter(published_main=1)
+	args['products_main'] = products_main
 	args['categories'] = categories
 	args['slides'] = slides
+
 
 	return render_to_response("main.html", args)
 

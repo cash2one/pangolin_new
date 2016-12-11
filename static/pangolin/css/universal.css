@@ -186,7 +186,58 @@ h4, h5, h6 {
   .device h3 a:hover {
   opacity: 1;
   color: #8F3985;
-  text-decoration: none; }   
+  text-decoration: none; }
+
+.device_bottom h3 {
+  margin: 10px 0 10px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  padding-bottom: 40px;
+  line-height: 1.2;
+  font-size: 20px;
+  color: #8F3985;
+  text-align: center;
+  font-weight: 600; }   
+
+.device_bottom h3 a{
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  font-stretch: extra-condensed;
+  text-transform: none;
+  line-height: 1.2;
+  font-size: 20px;
+  opacity: 0.9;
+  color: #0070c9;
+  text-align: center;
+  font-weight: 300; }
+
+.device_bottom h3 a:hover {
+  opacity: 1;
+  color: #8F3985;
+  text-decoration: none; }
+
+.device_main h3 {
+  margin: 40px 0 5px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  /*padding-bottom: 40px;*/
+  line-height: 1.2;
+  font-size: 20px;
+  /*color: #8F3985;*/
+  text-align: center;
+  font-weight: 600; }   
+
+.device_main h4 {
+  margin: 0 0 5px;
+  letter-spacing: 0.02em;
+  font-stretch: extra-condensed;
+  text-transform: none;
+  line-height: 1.2;
+  font-size: 16px;
+  opacity: 0.86;
+  /*color: #0070c9;*/
+  text-align: center;
+  font-weight: 300; }         
 
 .device h1 {
   margin: 0px 0 15px;
@@ -1265,8 +1316,8 @@ input[type=checkbox], input[type=radio] {
   padding-bottom: 20px; }
 
 .row_products {
-  padding-top: 40px; 
-  padding-bottom: 40px;
+  padding-top: 20px; 
+  padding-bottom: 0px;
 }  
 
 .row:not(:first-child) {
